@@ -18,13 +18,8 @@ export class DetailConferenceComponent implements OnInit {
 
 
   ngOnInit() {
-    /*en mode navigate*/
-
+    /*mode naivagte*/
     let confId:any;
-
-
-    var test: Conference;
-
     this.params.queryParams.subscribe(observable=> confId = observable);
 
     this.updateConference.getConferenceById(Number(confId.confId)).then(
@@ -33,10 +28,6 @@ export class DetailConferenceComponent implements OnInit {
         console.log(conferences);
         this.conferenceSelected = conferences;}
     )
-
-
-    //this.conferenceSelected = test.conf;
-    /*fin mode navigate*/
   }
 
   goBack(): void {
