@@ -3,6 +3,9 @@
 </p>
 ==>{{listconferences | json}}<==
 
-<div *ngFor="let conference of listconferences">{{conf.name}}</div>
+<div *ngFor="let conference of listconferences">
+  <a (click)="onTap(conference.id)">{{conference.name}}</a>
+
+</div>
 
 
