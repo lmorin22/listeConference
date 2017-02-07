@@ -3,12 +3,16 @@
 </p>
 
 <div *ngFor="let conference of listconferences">
+  <!-- version meme page
   <a (click)="onTap(conference)">{{conference.name}}</a>
+  -->
 
+  <!--version page differente-->
   <!--<a [routerLink]="['/conferenceDetail', { id: conference.id }]" routerLinkActive="active">{{conference.name}}</a>-->
+  <a (click)="onNavigate(conference)">{{conference.name}}</a>
 
 </div>
 
-
+<!-- version meme page
 <app-detail-conference [conferenceSelected]="conferenceSelected"></app-detail-conference>
-
+-->

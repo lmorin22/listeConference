@@ -17,6 +17,10 @@ const appRoutes: Routes = [
     component: InfoComponent,
     data: { label: 'labelParent' } //donnee statique readonly
   },
+  {
+    path: 'conferenceDetail',
+    component: DetailConferenceComponent
+  },
   { path: '**', component: ListConferencesComponent }
 ];
 

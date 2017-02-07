@@ -26,18 +26,17 @@ export class ListConferencesComponent implements OnInit, OnDestroy {
   }
 
   public onTap(conference) {
-    console.log(conference);
-
-    /*let navigationExtras: NavigationExtras = {
-      queryParams: {
-        "conf": conference
-      }
-    };
-    this.router.navigate(["DetailConferenceComponent"], navigationExtras);
-    */
-    this.conferenceSelected = conference;
-
+  console.log(conference);
+  this.conferenceSelected = conference;
   }
 
-
+  public onNavigate(conference) {
+    console.log(conference);
+    let navigationExtras: NavigationExtras = {
+     queryParams: {
+     "confId": conference.id
+     }
+     };
+     this.router.navigate(["conferenceDetail"], navigationExtras);
+  }
 }
