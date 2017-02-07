@@ -3,7 +3,7 @@ import {Conference} from "../model/conference";
 
 @Injectable()
 export class UpdateConferenceService {
-  /*conferences:Conference[]=
+  conferences:Conference[]=
     [{id:1,
       name:'Soyez un éditeur',
       actor: 'jojo'
@@ -11,12 +11,17 @@ export class UpdateConferenceService {
       id:1,
       name:'Le pourquoi du comment',
       actor: 'jlues'
-    }];*/
-  conferences:Conference= new Conference;
+    }];
 
+
+ // conferences=new Conference(1,'soyez éditeur', 'jojo');
 
 
   getConferences(){
+
+    console.log(this.conferences);
+    console.log(typeof this.conferences);
+
     let promise = new Promise((resolve,reject)=>{
       setTimeout(()=>{
         console.log('passela0');

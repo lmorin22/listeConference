@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UpdateConferenceService } from "./services/update.conferences.service"
 import {StoreConferenceService} from "./services/store.conferences.service";
+import {Conference} from "./model/conference";
 
 @Component({
   selector: 'app-root',
@@ -14,9 +15,7 @@ export class AppComponent implements OnInit{
 
   ngOnInit() {
     this.updateConference.getConferences().then(
-      (conferences) => {
-        console.log(conferences);
-        console.log(typeof conferences);
+      (conferences:Conference) => {
         this.storeConference.setConferences(conferences);
     });
 

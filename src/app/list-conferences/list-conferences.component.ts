@@ -10,7 +10,7 @@ import {Conference} from "../model/conference";
   styleUrls: ['./list-conferences.component.css']
 })
 export class ListConferencesComponent implements OnInit, OnDestroy {
-  listconferences: any[];
+  listconferences: Conference[];
   conferenceSelected: Conference;
   conferenceSubscription: Subscription;
   constructor(public storeConference: StoreConferenceService, public router:Router) { }
