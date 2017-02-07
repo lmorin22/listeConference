@@ -9,7 +9,7 @@ export class UpdateConferenceService {
       name: 'Soyez un éditeur',
       actor: 'jojo'
     }, {
-      id: 1,
+      id: 2,
       name: 'Le pourquoi du comment',
       actor: 'jlues'
     }];
@@ -18,7 +18,6 @@ export class UpdateConferenceService {
   getConferences() {
     let promise = new Promise((resolve, reject) => {
       setTimeout(() => {
-        console.log('passela0');
         resolve(this.conferences);
       }, 2000);
     });
@@ -26,15 +25,12 @@ export class UpdateConferenceService {
     return promise;
   }
 
-
   getConferenceById(id:number) {
-    let retour =  this.getConferences().then((conferences: Conference[]) => {
-      conferences.find(conference => conference.id === id)
-    });
-    console.log(typeof retour);
-    console.log(retour);
-    return retour;
-  }
+    console.log(id);
+    return this.getConferences()
+      //.then((conferences: Conference[]) => {conferences.find(conference => conference.id === 1);
+      .then((conferences: Conference[]) => conferences.filter(conference => conference.id === id)[0]);
+   }
 
 
 }
