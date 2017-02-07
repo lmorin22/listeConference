@@ -15,6 +15,7 @@ export class DetailConferenceComponent implements OnInit {
 
   ngOnInit() {
     console.log('detail');
+    console.log(this.conferenceSelected);
   }
 
 }

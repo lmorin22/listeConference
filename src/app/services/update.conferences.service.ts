@@ -12,16 +12,9 @@ export class UpdateConferenceService {
       name:'Le pourquoi du comment',
       actor: 'jlues'
     }];
-
-
  // conferences=new Conference(1,'soyez éditeur', 'jojo');
 
-
   getConferences(){
-
-    console.log(this.conferences);
-    console.log(typeof this.conferences);
-
     let promise = new Promise((resolve,reject)=>{
       setTimeout(()=>{
         console.log('passela0');

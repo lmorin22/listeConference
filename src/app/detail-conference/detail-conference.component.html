@@ -1,9 +1,10 @@
 <p>
-  detail-conference works!
+  detail-conference => {{conferenceSelected | json}} <=
 </p>
 
-<div *ngIf="conference">
-  <h2>{{conference.name}}</h2>
-  <div [(ngModel)]="conference.name" placeholder="nom conf"></div>
-  <div [(ngModel)]="conference.actor" placeholder="intervenant"></div>
+<div *ngIf="conferenceSelected">
+  <h2>{{conferenceSelected.name}}</h2>
+  <div [(ngModel)]="conferenceSelected.name" placeholder="nom conf"></div>
+<!--  <div [(ngModel)]="conferenceSelected.actor" placeholder="intervenant"></div>-->
 </div>
+
