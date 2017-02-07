@@ -1,10 +1,6 @@
-<p>
-  detail-conference => {{conferenceSelected | json}} <=
-</p>
-
 <div *ngIf="conferenceSelected">
-  <h2>{{conferenceSelected.name}}</h2>
-  <div [(ngModel)]="conferenceSelected.name" placeholder="nom conf"></div>
-<!--  <div [(ngModel)]="conferenceSelected.actor" placeholder="intervenant"></div>-->
+  <h2>detail-conference</h2>
+  {{conferenceSelected.actor}}
+  <input [(ngModel)]="conferenceSelected.name" />
 </div>
 
