@@ -16,6 +16,7 @@ export class AppComponent implements OnInit{
     this.updateConference.getConferences().then(
       (conferences) => {
         console.log(conferences);
+        console.log(typeof conferences);
         this.storeConference.setConferences(conferences);
     });
 

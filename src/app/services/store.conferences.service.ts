@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import {Conference} from "../model/conference";
 
 @Injectable()
 export class StoreConferenceService {
@@ -7,7 +8,7 @@ export class StoreConferenceService {
 
   conference$ = this.conferenceSource.asObservable();
 
-  setConferences(conference: any){
+  setConferences(conference: Conference){
     this.conferenceSource.next(conference);
   }
 

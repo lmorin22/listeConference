@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {Conference} from "../model/conference";
 
 @Component({
   selector: 'app-detail-conference',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailConferenceComponent implements OnInit {
 
+
+  @Input() conferenceSelected:Conference;
+
   constructor() { }
 
   ngOnInit() {
+    console.log('detail');
   }
 
 }

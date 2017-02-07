@@ -1,16 +1,20 @@
 import {Injectable} from "@angular/core";
+import {Conference} from "../model/conference";
 
 @Injectable()
 export class UpdateConferenceService {
-  conferences:any[]=
-      [{id:1,
+  /*conferences:Conference[]=
+    [{id:1,
       name:'Soyez un éditeur',
       actor: 'jojo'
     },{
-        id:1,
-        name:'Le pourquoi du comment',
-        actor: 'jlues'
-      }];
+      id:1,
+      name:'Le pourquoi du comment',
+      actor: 'jlues'
+    }];*/
+  conferences:Conference= new Conference;
+
+
 
   getConferences(){
     let promise = new Promise((resolve,reject)=>{

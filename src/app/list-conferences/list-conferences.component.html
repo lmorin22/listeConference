@@ -1,11 +1,13 @@
 <p>
   Les conférences :
 </p>
-==>{{listconferences | json}}<==
 
 <div *ngFor="let conference of listconferences">
-  <a (click)="onTap(conference.id)">{{conference.name}}</a>
+  <a (click)="onTap(conference)">{{conference.name}}</a>
+
+  <!--<a [routerLink]="['/conferenceDetail', { id: conference.id }]" routerLinkActive="active">{{conference.name}}</a>-->
 
 </div>
+<app-detail-conference [conferenceSelected]="conferenceSelected"></app-detail-conference>
 
 

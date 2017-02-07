@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import {StoreConferenceService} from "../services/store.conferences.service";
 import {Subscription} from "rxjs/Subscription"
 import {NavigationExtras, Router} from "@angular/router";
+import {Conference} from "../model/conference";
 
 @Component({
   selector: 'app-list-conferences',
@@ -10,6 +11,7 @@ import {NavigationExtras, Router} from "@angular/router";
 })
 export class ListConferencesComponent implements OnInit, OnDestroy {
   listconferences: any[];
+  conferenceSelected: Conference;
   conferenceSubscription: Subscription;
   constructor(public storeConference: StoreConferenceService, public router:Router) { }
 
@@ -23,14 +25,18 @@ export class ListConferencesComponent implements OnInit, OnDestroy {
     this.conferenceSubscription.unsubscribe();
   }
 
-  public onTap(id) {
-    let navigationExtras: NavigationExtras = {
+  public onTap(conference) {
+    console.log(conference);
+
+    /*let navigationExtras: NavigationExtras = {
       queryParams: {
-        "id": id,
-        "name": "DetailConferenceComponent"
+        "conf": conference
       }
     };
     this.router.navigate(["DetailConferenceComponent"], navigationExtras);
+    */
+    this.conferenceSelected = conference;
+
   }
 
 

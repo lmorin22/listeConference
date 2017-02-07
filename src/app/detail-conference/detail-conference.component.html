@@ -1,3 +1,9 @@
 <p>
   detail-conference works!
 </p>
+
+<div *ngIf="conference">
+  <h2>{{conference.name}}</h2>
+  <div [(ngModel)]="conference.name" placeholder="nom conf"></div>
+  <div [(ngModel)]="conference.actor" placeholder="intervenant"></div>
+</div>
