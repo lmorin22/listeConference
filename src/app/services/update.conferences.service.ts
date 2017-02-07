@@ -26,9 +26,8 @@ export class UpdateConferenceService {
   }
 
   getConferenceById(id:number) {
-    console.log(id);
     return this.getConferences()
-      //.then((conferences: Conference[]) => {conferences.find(conference => conference.id === 1);
+      //ko .then((conferences: Conference[]) => {conferences.find(conference => conference.id === 1);
       .then((conferences: Conference[]) => conferences.filter(conference => conference.id === id)[0]);
    }
 

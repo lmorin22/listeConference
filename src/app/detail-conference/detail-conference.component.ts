@@ -26,8 +26,9 @@ export class DetailConferenceComponent implements OnInit {
     var test: Conference;
 
     this.params.queryParams.subscribe(observable=> confId = observable);
-    this.updateConference.getConferenceById(confId.confId).then(
-  //  this.updateConference.getConferenceById(1).then(
+
+    this.updateConference.getConferenceById(Number(confId.confId)).then(
+    //this.updateConference.getConferenceById(2).then(
       (conferences:any) => {
         console.log(conferences);
         this.conferenceSelected = conferences;}
