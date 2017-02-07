@@ -18,7 +18,7 @@ export class ListConferencesComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(){
-    console.log('destroy')
+    console.log('destroy me')
     this.conferenceSubscription.unsubscribe();
   }
 
