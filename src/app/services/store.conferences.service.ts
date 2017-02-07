@@ -8,7 +8,7 @@ export class StoreConferenceService {
 
   conference$ = this.conferenceSource.asObservable();
 
-  setConferences(conference: Conference){
+  setConferences(conference: Conference[]){
     this.conferenceSource.next(conference);
   }
 

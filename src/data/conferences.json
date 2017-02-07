@@ -1,0 +1,17 @@
+{
+  "conference": [{
+    "id": 1,
+    "name": "Soyez un éditeur",
+    "actor": "jojo"
+  },{
+    "id": 2,
+    "name": "Le pourquoi du comment",
+    "actor": "jlues"
+  }
+
+  ]
+
+
+
+}
+

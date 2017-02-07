@@ -14,10 +14,17 @@ export class AppComponent implements OnInit{
   constructor(public updateConference: UpdateConferenceService, public  storeConference: StoreConferenceService) { }
 
   ngOnInit() {
-    this.updateConference.getConferences().then(
+    /*this.updateConference.getConferences().then(
       (conferences:Conference) => {
         this.storeConference.setConferences(conferences);
-    });
+    });*/
+    this.updateConference.getConferencesJson().subscribe(
+        (conferences:Conference[]) => {
+          console.log(conferences);
+          this.storeConference.setConferences(conferences);
+        },
+        error => console.log(error)
+    )
 
   }
 

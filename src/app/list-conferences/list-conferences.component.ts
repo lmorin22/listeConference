@@ -14,7 +14,6 @@ export class ListConferencesComponent implements OnInit, OnDestroy {
   conferenceSelected: Conference;
   conferenceSubscription: Subscription;
   constructor(public storeConference: StoreConferenceService, public router:Router) { }
-
   ngOnInit() {
     this.conferenceSubscription = this.storeConference.conference$.subscribe( observable=> this.listconferences = observable);
     console.log(this.listconferences);
@@ -39,4 +38,21 @@ export class ListConferencesComponent implements OnInit, OnDestroy {
      };
      this.router.navigate(["conferenceDetail"], navigationExtras);
   }
+
+  public addConf() {
+
+    //let ajoutConf: Conference = new Conference(3,"test1","nom1");
+
+    let ajoutConf: Conference[] =
+      [{
+        id: 3,
+        name: 'Nvo',
+        actor: 'juju'
+      }];
+
+    this.storeConference.setConferences(ajoutConf);
+
+  }
+
+
 }

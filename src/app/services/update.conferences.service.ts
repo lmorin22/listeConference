@@ -1,28 +1,46 @@
 import {Injectable} from "@angular/core";
 import {Conference} from "../model/conference";
+import {Observable} from "rxjs/Rx";
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import {Http, Response} from "@angular/http";
 
 @Injectable()
 export class UpdateConferenceService {
-  conferences: Conference[] =
-    [{
-      id: 1,
-      name: 'Soyez un éditeur',
-      actor: 'jojo'
-    }, {
-      id: 2,
-      name: 'Le pourquoi du comment',
-      actor: 'jlues'
-    }];
+  // Mode en dur
   // conferences=new Conference(1,'soyez éditeur', 'jojo');
-
   getConferences() {
+    let conferences: Conference[] =
+      [{
+        id: 1,
+        name: 'Soyez un éditeur',
+        actor: 'jojo'
+      }, {
+        id: 2,
+        name: 'Le pourquoi du comment',
+        actor: 'jlues'
+      }];
     let promise = new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(this.conferences);
+        resolve(conferences);
       }, 2000);
     });
 
     return promise;
+  }
+
+
+  constructor (private http:Http){}
+  //appel json
+  //getConferences(): Observable<Conference[]> {
+  getConferencesJson(): Observable<any> {
+    let pathJson = "data/conferences.json";
+    return this.http.get(pathJson)
+      .map((res:Response)=>{
+      console.log(res.json().conference);
+      return res.json().conference;})
+      .catch((err)=>Observable.throw("erreur :" + err))
+
   }
 
   getConferenceById(id:number) {
