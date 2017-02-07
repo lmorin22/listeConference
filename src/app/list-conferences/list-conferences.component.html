@@ -10,10 +10,22 @@
   <!--version page differente-->
   <!--<a [routerLink]="['/conferenceDetail', { id: conference.id }]" routerLinkActive="active">{{conference.name}}</a>-->
   <a (click)="onNavigate(conference)">{{conference.name}}</a>
+  <button (click)="removeConf(conference.id)">supp</button>
 
 </div>
 
-<button (click)="addConf()">Ajout conference</button>
+
+
+
+<button (click)="addConf()">Ajout conference Auto</button>
+
+
+
+<form (ngSubmit)="addConfManuel($event)">
+  <input name="name" type="text" placeholder="Nom de la conference" [ngModel]="conferenceAdd.name" required>
+  <input name="actor" type="text" placeholder="intervenant" [ngModel]="conferenceAdd.actor" required>
+  <button type="submit">Ajout manuel</button>
+</form>
 
 <!-- version meme page
 <app-detail-conference [conferenceSelected]="conferenceSelected"></app-detail-conference>

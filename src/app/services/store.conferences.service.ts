@@ -13,6 +13,17 @@ export class StoreConferenceService {
   }
 
 
+  addConferences(conference: Conference) {
+    let arrConferences:Conference[] = this.conferenceSource.getValue();
+    arrConferences.push(conference);
+    this.conferenceSource.next(arrConferences);
+  }
+
+  removeConferences(conferenceId: number) {
+    let arrConferences:Conference[] = this.conferenceSource.getValue();
+    arrConferences = arrConferences.filter(item => item.id !== conferenceId);
+    this.conferenceSource.next(arrConferences);
+  }
 
 
 }

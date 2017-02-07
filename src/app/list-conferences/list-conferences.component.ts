@@ -3,6 +3,7 @@ import {StoreConferenceService} from "../services/store.conferences.service";
 import {Subscription} from "rxjs/Subscription"
 import {NavigationExtras, Router} from "@angular/router";
 import {Conference} from "../model/conference";
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-list-conferences',
@@ -40,18 +41,21 @@ export class ListConferencesComponent implements OnInit, OnDestroy {
   }
 
   public addConf() {
+    let ajoutConf: Conference = new Conference(3,"test1","nom1");
+    this.storeConference.addConferences(ajoutConf);
+  }
 
-    //let ajoutConf: Conference = new Conference(3,"test1","nom1");
+  conferenceAdd: Conference;
 
-    let ajoutConf: Conference[] =
-      [{
-        id: 3,
-        name: 'Nvo',
-        actor: 'juju'
-      }];
+  public addConfManuel(event){
+    console.log(event);
+    console.log(this);
+  }
 
-    this.storeConference.setConferences(ajoutConf);
-
+  public removeConf(confId){
+    console.log(confId);
+    console.log(typeof confId);
+    this.storeConference.removeConferences(confId);
   }
 
 
